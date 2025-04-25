@@ -2,4 +2,4 @@
 version = 1
 projectId = "429187968807412737"
 firmware = "build/blink.ino"
-elf = "arduino:avr:uno"
+elf = "build/blink.ino.elf"
