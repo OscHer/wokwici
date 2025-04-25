@@ -2,14 +2,13 @@ name: Wokwi CI Blink Test
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
       - '**.ino'
       - 'wokwi.toml'
+      - 'diagram.json'
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   simulate:
@@ -23,4 +22,7 @@ jobs:
         uses: wokwi/wokwi-ci-action@v1
         env:
           WOKWI_CLI_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
+          # Opcionales si quieres test automáticos con salida esperada
+          # CI_EXPECT_TEXT: "LED is on"
+          # CI_FAIL_TEXT: "error"
 
