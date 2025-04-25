@@ -1,16 +1,14 @@
-name: Wokwi CI Blink Test
+name: Simulate Blink on Wokwi
 
 on:
   push:
     paths:
-      - '**.ino'
+      - '**/*.ino'
       - 'wokwi.toml'
-  pull_request:
 
 jobs:
   simulate:
     runs-on: ubuntu-latest
-    name: Simulate Blink on Wokwi
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -20,9 +18,8 @@ jobs:
           wget -q -O /usr/local/bin/wokwi-cli https://github.com/wokwi/wokwi-cli/releases/latest/download/wokwi-cli-linuxstatic-x64
           chmod +x /usr/local/bin/wokwi-cli
 
-      - name: Run blink.ino simulation
-        run: |
-          wokwi-cli --timeout 10000 --code blink.ino
+      - name: Run simulation using wokwi.toml
+        run: wokwi-cli --timeout 10000
         env:
           WOKWI_CLI_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
 
