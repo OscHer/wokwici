@@ -2,3 +2,4 @@
 version = 1
 projectId = "429187968807412737"
 elf = "build/blink.ino.elf"
+firmware = "build/blink.ino.hex"
