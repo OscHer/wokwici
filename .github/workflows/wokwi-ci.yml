@@ -2,24 +2,25 @@ name: Wokwi CI Blink Test
 
 on:
   push:
+    branches:
+      - main
     paths:
       - '**.ino'
       - 'wokwi.toml'
   pull_request:
+    branches:
+      - main
 
 jobs:
   simulate:
     runs-on: ubuntu-latest
     name: Simulate Blink on Wokwi
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Run Wokwi CI
         uses: wokwi/wokwi-ci-action@v1
-        with:
-          path: .
-          timeout: 10000
         env:
           WOKWI_CLI_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
-      
+
