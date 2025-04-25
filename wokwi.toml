@@ -1,5 +1,6 @@
 [project]
-id = 429187968807412737
+projectId = "429187968807412737"
+
 [target]
 board = "uno"  # Puedes usar otros como mega, nano, etc.
 
