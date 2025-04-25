@@ -1,7 +1,5 @@
 [wokwi]
 version = 1
 projectId = "429187968807412737"
-firmware = "placeholder.hex"
-elf = "placeholder.elf"
-
-
+firmware = "build/blkink.ino"
+elf = "arduino:avr:uno"
