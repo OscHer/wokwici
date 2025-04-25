@@ -1,5 +1,4 @@
 // Dummy change
-// Another
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 }
