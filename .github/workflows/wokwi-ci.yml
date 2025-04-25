@@ -2,27 +2,22 @@ name: Wokwi CI Blink Test
 
 on:
   push:
-    branches: [main]
     paths:
       - '**.ino'
       - 'wokwi.toml'
-      - 'diagram.json'
   pull_request:
-    branches: [main]
 
 jobs:
   simulate:
     runs-on: ubuntu-latest
     name: Simulate Blink on Wokwi
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Run Wokwi CI
         uses: wokwi/wokwi-ci-action@v1
         env:
           WOKWI_CLI_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
-          # Opcionales si quieres test automáticos con salida esperada
-          # CI_EXPECT_TEXT: "LED is on"
-          # CI_FAIL_TEXT: "error"
+          WOKWI_CLI_ARGS: --code blink.ino
 
