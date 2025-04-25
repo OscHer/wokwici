@@ -1,5 +1,5 @@
 [wokwi]
 version = 1
 projectId = "429187968807412737"
-firmware = "build/blkink.ino"
+firmware = "build/blink.ino"
 elf = "arduino:avr:uno"
