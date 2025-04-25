@@ -1,0 +1,13 @@
+[target]
+board = "uno"  # Puedes usar otros como mega, nano, etc.
+
+[simulation]
+timeout = 5000 # Duración de la simulación en milisegundos
+
+[assert]
+# Aquí podrías meter condiciones de prueba con valores digitales o analógicos
+# Por ejemplo, para verificar que el LED ha cambiado de estado:
+pins = [
+  { pin = 13, changes = ">=2" }
+]
+

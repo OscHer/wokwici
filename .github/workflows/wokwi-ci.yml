@@ -1,0 +1,20 @@
+name: Wokwi CI Blink Test
+
+on:
+  push:
+    paths:
+      - '**.ino'
+      - 'wokwi.toml'
+  pull_request:
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    name: Simulate Blink on Wokwi
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run Wokwi CI
+        uses: wokwi/wokwi-ci-action@v1
+
